@@ -10,21 +10,3 @@ Rails.application.routes.draw do
     end
   end
 end
-
-
-
-
-# fetch("http://localhost:3000/api/v1/users",{
-#   method: "POST",
-#   headers:{
-#     "Accept": "application/json",
-#     "Content-Type": "application/json"
-#   },
-#   body:JSON.stringify({
-#     user:{
-#       username:"andrew",
-#       password:"hey"
-#     }
-#     })})
-# .then(r=>r.json())
-# .then(r=>console.log(r))

@@ -1,7 +1,6 @@
 class Api::V1::AuthController < ApplicationController
   skip_before_action :authorized, only: [:create]
 
-
   ## user logs in
   #is authenticated
   #gets a new jwt token
