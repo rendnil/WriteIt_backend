@@ -11,9 +11,13 @@ User.destroy_all
 Post.destroy_all
 
 puts "making users"
-  10.times do
-    User.create()
-  end
+
+    User.create(username:"a", password:"a")
+    User.create(username:"b", password:"a")
+    User.create(username:"c", password:"a")
+    User.create(username:"d", password:"a")
+    User.create(username:"e", password:"a")
+
 puts "done making users"
   20.times do
     Post.create(user_id: User.all.sample.id, title:Faker::GreekPhilosophers.quote, content:Faker::FamousLastWords.last_words, upvotes:rand(100), downvotes:rand(100))
