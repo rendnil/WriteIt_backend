@@ -9,6 +9,7 @@ require 'faker'
 
 User.destroy_all
 Post.destroy_all
+Comment.destroy_all
 
 puts "making users"
 
@@ -19,11 +20,13 @@ puts "making users"
     User.create(username:"e", password:"a")
 
 puts "done making users"
+puts "making posts"
   20.times do
-    Post.create(user_id: User.all.sample.id, title:Faker::GreekPhilosophers.quote, content:Faker::FamousLastWords.last_words, upvotes:rand(100), downvotes:rand(100))
+    Post.create(author_id: User.all.sample.id, title:Faker::GreekPhilosophers.quote, content:Faker::FamousLastWords.last_words, upvotes:rand(100), downvotes:rand(100))
   end
 
-
-
-puts "making posts"
 puts "done making posts"
+
+puts "making comments"
+
+puts "done making comments"

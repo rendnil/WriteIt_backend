@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :username, uniqueness: {case_sensitive: false}
 
-  has_many :posts
+  has_many :posts, foreign_key: "author_id"
+  has_many :comments, foreign_key: "commenter_id"
 
 end
