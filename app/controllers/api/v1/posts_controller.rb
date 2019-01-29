@@ -7,8 +7,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(user_id: post_params["user_id"],title: post_params["title"],
-    content: post_params["content"], upvotes: 0, downvotes: 0)
+    @post = Post.create(post_params)
 
     if @post.valid?
       render json: @post, state: :created
@@ -28,7 +27,7 @@ class Api::V1::PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:user_id, :title, :content, :upvotes, :downvotes)
+    params.require(:post).permit(:author_id, :title, :content)
   end
 
 
