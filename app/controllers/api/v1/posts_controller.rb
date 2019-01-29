@@ -10,9 +10,9 @@ class Api::V1::PostsController < ApplicationController
     @post = Post.create(post_params)
 
     if @post.valid?
-      render json: @post, state: :created
+      render json: @post, status: :created
     else
-      render json: { error: 'Failed to Execute Trade' }, status: :not_acceptable
+      render json: { error: 'Failed to create post' }, status: :not_acceptable
     end
 
   end
